@@ -265,13 +265,13 @@ Alexander Solís-Quesada}
 
 % Note that keywords are not normally used for peerreview papers.
 
-\IEEEtitleabstractindextext{%
-\begin{abstract}
-El resumen deberá estar escrito en Arial, 9 Pts, cursiva y justificado en la columna del lado izquierdo como se muestra en este documento. Se debe de utilizar la palabra RESUMEN, como título en mayúsculas, Arial, 9 Pts, cursiva, negritas y espacio simple. La forma solicitada para los documentos esta basada en parte en los formatos utilizados para los documentos de la IEEE. El resumen no debe de exceder de 150 palabras y debe establecer lo que fue hecho, como fue hecho, los resultados principales y su significado. No cite referencias en el resumen, ni borre el espacio sobre el resumen. Dejar dos espacios en blanco después del RESUMEN, para iniciar con el texto del artículo.
-\end{abstract}
-\begin{IEEEkeywords}
-Acondicionador de señal, Sensores, Termistor.
-\end{IEEEkeywords}}
+%\IEEEtitleabstractindextext{
+%\begin{abstract}
+%El resumen deberá estar escrito en Arial, 9 Pts, cursiva y justificado en la columna del lado izquierdo como se muestra en este documento. Se debe de utilizar la palabra RESUMEN, como título en mayúsculas, Arial, 9 Pts, cursiva, negritas y espacio simple. La forma solicitada para los documentos esta basada en parte en los formatos utilizados para los documentos de la IEEE. El resumen no debe de exceder de 150 palabras y debe establecer lo que fue hecho, como fue hecho, los resultados principales y su significado. No cite referencias en el resumen, ni borre el espacio sobre el resumen. Dejar dos espacios en blanco después del RESUMEN, para iniciar con el texto del artículo.
+%\end{abstract}
+%\begin{IEEEkeywords}
+%Acondicionador de señal, Sensores, Termistor.
+%\end{IEEEkeywords}}
 
 
 % make the title area
@@ -305,7 +305,7 @@ Acondicionador de señal, Sensores, Termistor.
 % creates the second title. It will be ignored for other modes.
 \IEEEpeerreviewmaketitle
 
-\section{Introducción}
+%\section{Introducción}
 % The very first letter is a 2 line initial drop letter followed
 % by the rest of the first word in caps.
 % 
@@ -321,45 +321,11 @@ Acondicionador de señal, Sensores, Termistor.
 % 
 % Here we have the typical use of a "T" for an initial drop letter
 % and "HIS" in caps to complete the first word.
-Esta guía incluye las descripciones completas de los tipos de letra, del espaciamiento, y la información relacionada para elaborar sus reportes, basada en los formatos utilizados por la IEEE.
+
+%Esta guía incluye las descripciones completas de los tipos de letra, del espaciamiento, y la información relacionada para elaborar sus reportes, basada en los formatos utilizados por la IEEE.
 
 
 
-%\subsection{Subsection Heading Here}
-
-
-
-%
-%\begin{figure}[!t]
-%\centering
-%\includegraphics[width=2.5in]{myfigure}
-% where an .eps filename suffix will be assumed under latex, 
-% and a .pdf suffix will be assumed for pdflatex; or what has been declared
-% via \DeclareGraphicsExtensions.
-%\caption{Simulation Results.}
-%\label{fig_sim}
-%\end{figure}
-
-
-%
-%\begin{table}[!t]
-%% increase table row spacing, adjust to taste
-%\renewcommand{\arraystretch}{1.3}
-% if using array.sty, it might be a good idea to tweak the value of
-% \extrarowheight as needed to properly center the text within the cells
-%\caption{An Example of a Table}
-%\label{table_example}
-%\centering
-%% Some packages, such as MDW tools, offer better commands for making tables
-%% than the plain LaTeX2e tabular which is used here.
-%\begin{tabular}{|c||c|}
-%\hline
-%One & Two\\
-%\hline
-%Three & Four\\
-%\hline
-%\end{tabular}
-%\end{table}
 \section{Datos de entrada: Prueba de calibración}
 \begin{enumerate}
     \item A partir de una prueba de calibración realizada a un sensor de temperatura resistivo con rango de $0^{\circ}C$ a $100^{\circ}C$, se reciben los siguientes valores:
@@ -385,16 +351,16 @@ Esta guía incluye las descripciones completas de los tipos de letra, del espaci
 \end{enumerate}
 
 \section{Limitación de la corriente de entrada}
-Se propone el siguiente circuito (Figura \ref{fig:circuito_div_tension}) de medición para el sensor de temperatura resistivo. Corresponde a un divisor de tensión, en donde el valor de R debe de limitar la corriente para que esta no sobrepase la corriente máxima del sensor de 0,1mA.
+Se propone el siguiente circuito (Figura \ref{fig:circuito_div_tension}) de medición para el sensor de temperatura resistivo. Corresponde a un divisor de tensión, en donde el valor de R debe de limitar la corriente para que esta no sobrepase la corriente máxima del sensor de 0,1mA. La resistencia $R_{T}$ representa donde se colocaría el sensor de temperatura resistivo.
 
 \begin{figure}[hbtp]
 	\centering
-	\includegraphics[width = \columnwidth]{circuito_div_tension.png}
-	\caption[Figura 1]{Circuito de medición (divisor de tensión) para el sensor de temperatura resistivo.}
+	\includegraphics[width = \columnwidth]{images/circuito_div_tension.png}
+	\caption{Circuito de medición (divisor de tensión) para el sensor de temperatura resistivo (RTD).}
     \label{fig:circuito_div_tension}
 \end{figure}
 
-A continuación se muestra el procedimiento para calcular el valor de R.
+A continuación se muestra el procedimiento utilizado para calcular el valor de R.
 
 \begin{gather*}
     I = \frac{V_{CC}}{R_{eq}} \\
@@ -411,14 +377,6 @@ A continuación se muestra el procedimiento para calcular el valor de R.
 
 Por conveniencia en la selección de componentes se decide utilizar un valor de $100 k\Omega$ para la resistencia R, ya que este es el valor más cercano al obtenido y que sigue mantiendo la corriente en el circuito menor a la corriente máxima permitida por el sensor.
 
-El circuito resultante se puede observar en la Figura \ref{fig:circuito_div_tension_res}.
-
-\begin{figure}[hbtp]
-	\centering
-	\includegraphics[width = \columnwidth]{circuito_div_tension_res.png}
-	\caption[Figura 2]{Circuito de medición (divisor de tensión) para el sensor de temperatura resistivo con sus respectivos valores.}
-    \label{fig:circuito_div_tension_res}
-\end{figure}
 
 \section{Tensiones de salida en el sensor de temperatura resistivo} 
 A partir del circuito obtenido en la sección anterior, se utiliza la ecuación de divisor de tensión (Ecuacion \ref{eq:div_tension}) para calcular las tensiones de salida del sensor (Tabla \ref{tab:tensiones_salida}).
@@ -429,7 +387,7 @@ A partir del circuito obtenido en la sección anterior, se utiliza la ecuación 
 
 \begin{table}[htb]
     \begin{center}
-        \caption{Tensiones de salida para el sensor de temperatura resistivo calculadas a partir del circuito de medición de la Figura \ref{fig:circuito_div_tension_res}.}
+        \caption{Tensiones de salida para el RTD del circuito de medición de la Figura \ref{fig:circuito_div_tension}.}
         \label{tab:tensiones_salida}
         \begin{tabular}{c | c | c | c | c | c | c | c}
             \hline
@@ -437,24 +395,25 @@ A partir del circuito obtenido en la sección anterior, se utiliza la ecuación 
             \hline
             T ($^{\circ}C$) & 0 & 20 & 50 & 70 & 80 & 90 & 100  \\
             \hline
-            V (mV) & 9.99 & 10.78 & 11.86 & 12.68 & 13.08 & 13.38 & 13.78  \\
+            $V_{T}$ (mV) & 9.99 & 10.78 & 11.86 & 12.68 & 13.08 & 13.38 & 13.78  \\
             \hline
         \end{tabular}
     \end{center}
 \end{table}
 
 
-
-\section{Acondicionamiento de la señal}
-\subsection{Obtención del circuito de medición acondicionado}
+\section{Acondicionamiento de la señal }
 Se desea acondicionar los valores de tensión obtenidos (Tabla \ref{tab:tensiones_salida}) a un rango de 0 a 5V, manteniendo el rango de temperatura de $0^{\circ}C$ a $100^{\circ}C$. Esto porque los valores obtenidos del sensor son en el orden de los mV y al ser valores tan pequeños son fácilmente confundidos con el ruido, razón por la cual se desean amplificar y así tener una lectura más confiable y sencilla de ver.
 
-Para amplificar la señal se agrega un amplificador operacional no inversor (figura \ref{fig:op_amp}) al circuito de medición de la figura \ref{fig:circuito_div_tension_res}.
+\subsection{Acondicionamiento de la señal con un amplificador operacional}
+\subsubsection{Obtención del circuito de medición acondicionado}
+
+Para amplificar la señal se agrega un amplificador operacional no inversor (figura \ref{fig:op_amp}) al circuito de medición de la figura \ref{fig:circuito_div_tension}. Note que la tensión de salida del sensor es la misma que la entrada al acondicionador y se denota como $V_{T}$, y la tensión de salida del acondicionador se denota como $V_{OUT}$.
 
 \begin{figure}[hbtp]
 	\centering
-	\includegraphics[width = \columnwidth]{op_amp.png}
-	\caption[Figura 2]{Circuito de medición acondicionado con un amplificador operacional.}
+	\includegraphics[width = \columnwidth]{images/op_amp.PNG}
+	\caption{Etapa de acondicionamiento con un amplificador operacional en modo no inversor.}
     \label{fig:op_amp}
 \end{figure}
 
@@ -469,18 +428,18 @@ El factor $(1+\frac{R_{f}}{R_{1}})$ corresponde a la ganancia de amplificador op
 
 \begin{gather*}
     5V = (1+\frac{R_{f}}{R_{1}})13.78mV \\
-    \Longrightarrow (1+\frac{-R_{f}}{R_{1}}) = \frac{5 V}{13.78 mV} \\
+    \Longrightarrow (1+\frac{R_{f}}{R_{1}}) = \frac{5 V}{13.78 mV} \\
     \Longrightarrow \frac{R_{f}}{R_{1}} = 362.85-1 \\
     \Longrightarrow \frac{R_{f}}{R_{1}} = 361.85
 \end{gather*}
 
-Para aproximar el valor de ganancia requerido se pueden proponen los siguientes valores para las resistencias: $R_{f}=36 k\Omega$ y $R_{1}=100 \Omega$. Obteniendo con estos una amplificación de 360 con respecto a la señal original.
+Para aproximar el valor de ganancia requerido se proponen los siguientes valores para las resistencias: $R_{f}=36 k\Omega$ y $R_{1}=100 \Omega$. Obteniendo con estos una amplificación de 360 con respecto a la señal original.
 
 Una vez obtenidala ganancia requerida, se calculan los valores de tensión de salida acondicionados al rango deseado con la ecuación \ref{eq:ecuacion_op_amp}. Estos se presentan en la tabla \ref{tab:tensiones_salida_acondicionados}.
 
 \begin{table}[htb]
     \begin{center}
-        \caption{Tensiones de salida acondicionadas para el circuito de medición acondicionado de la Figura \ref{fig:circuito_acondicionado}.}
+        \caption{Tensiones de salida acondicionadas a partir del circuito de la Figura \ref{fig:op_amp}.}
         \label{tab:tensiones_salida_acondicionados}
         \begin{tabular}{c | c | c | c | c | c | c | c}
             \hline
@@ -488,30 +447,92 @@ Una vez obtenidala ganancia requerida, se calculan los valores de tensión de sa
             \hline
             T ($^{\circ}C$) & 0 & 20 & 50 & 70 & 80 & 90 & 100 \\
             \hline
-            V (mV) & 9.99 & 10.78 & 11.86 & 12.68 & 13.08 & 13.38 & 13.78 \\
+            $V_{T}$ (mV) & 9.99 & 10.78 & 11.86 & 12.68 & 13.08 & 13.38 & 13.78 \\
             \hline
-            V (V) & 3.60 & 3.88 & 4.27 & 4.57 & 4.71 & 4.82 & 4.96 \\
+            $V_{OUT}$ (V) & 3.60 & 3.88 & 4.27 & 4.57 & 4.71 & 4.82 & 4.96 \\
             \hline
         \end{tabular}
     \end{center}
 \end{table}
 
-El circuito de medición acondicionado completo se puede observar en la figura \ref{fig:circuito_acondicionado}.
+\subsubsection{Simluación en LTSpice}
+
+Al simular el circuito de la figura \ref{fig:op_amp}, asignandole a la fuente $V_{IN}$ las tensiones de salida del sensor ($V_{T}$), se obtienen las siguientes tensiones acondicionadas (tabla \ref{tab:tensiones_salida_simuladas_op_amp}). El modelo del amplificador operacional utilizado corresponde al OP07 de Analog Devices.
+
+\begin{table}[htb]
+    \begin{center}
+        \caption{Tensiones de salida simuladas para la etapa de acondicionamiento con un amp.op. (Figura \ref{fig:op_amp}.)}
+        \label{tab:tensiones_salida_simuladas_op_amp}
+        \begin{tabular}{c | c | c | c | c | c | c | c}
+            \hline
+            R ($\Omega$) & 100 & 108 & 119 & 127 & 131 & 134 & 138 \\
+            \hline
+            T ($^{\circ}C$) & 0 & 20 & 50 & 70 & 80 & 90 & 100 \\
+            \hline
+            $V_{T}$ (mV) & 9.99 & 10.78 & 11.86 & 12.68 & 13.08 & 13.38 & 13.78 \\
+            \hline
+            $V_{OUT}$ (V) & 3.53 & 3.81 & 4.20 & 4.49 & 4.63 & 4.73 & 4.88 \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+\subsection{Acondicionamiento de la señal con un amplificador de instrumentación}
+
+\subsubsection{Obtención del circuito de medición acondicionado}
+
+Se utiliza un amplificador de instrumentación modelo LT1167 de Analog Devices. A partir de la hoja de datos se obtiene la siguiente relación entre la tensión de entrada recibida y la tensión de salida (ecuacion \ref{eq:ecuacion_op_amp_inst}).
+
+\begin{equation} 
+    \label {eq:ecuacion_op_amp_inst}
+    V_{OUT} = V_{IN}(\frac{49.4k\Omega}{R_{G}}+1)
+\end{equation}
+
+Sabemos que la ganancia deseada es de $G=\frac{V_{OUT}}{V_{IN}}=361.85$. Despejando $R_{G}$ de la ecuación \ref{eq:ecuacion_op_amp_inst} obtenemos la ecuación \ref{eq:ecuacion_rg_inst}.
+
+\begin{equation}
+    \label {eq:ecuacion_rg_inst}
+    R_{G} = \frac{49.4k\Omega}{G-1}
+\end{equation}
+
+Desarrollando,
+
+\begin{gather*}
+    R_{G} = \frac{49.4k\Omega}{361.85-1} \\
+    R_{G} = 136.9 \Omega
+\end{gather*}
+
+Se elije utilizar $R_{G}=140$ por conveniencia en la selección de componentes. Una vez obtenido el valor de $R_{G}$ se define el circuito de la figura \ref{fig:op_amp_inst} para la etapa de acondicionamiento con amplificador de instrumentación.
 
 \begin{figure}[hbtp]
 	\centering
-	\includegraphics[width = \columnwidth]{circuito_acondicionado.png}
-	\caption[Figura 2]{Circuito de medición acondicionado con un amplificador operacional.}
-    \label{fig:circuito_acondicionado}
+	\includegraphics[width = \columnwidth]{images/op_amp_inst.PNG}
+	\caption{Etapa de acondicionamiento con un amplificador operacional de instrumentación.}
+    \label{fig:op_amp_inst}
 \end{figure}
 
-\subsection{Simluación en LTSpice}
 
-\section{Acondicionamiento de la señal con un amplificador de instrumentación}
+\subsubsection{Simluación en LTSpice}
+Al simular el circuito de la figura \ref{fig:op_amp_inst}, asignandole a la fuente $V_{IN}$ las tensiones de salida del sensor ($V_{T}$), se obtienen las siguientes tensiones acondicionadas (tabla \ref{tab:tensiones_salida_simuladas_instr}).
 
-\subsection{Obtención del circuito de medición acondicionado}
+\begin{table}[htb]
+    \begin{center}
+        \caption{Tensiones de salida simuladas para la etapa de acondicionamiento con un amp. de instrumentación (Figura \ref{fig:op_amp_inst}).}
+        \label{tab:tensiones_salida_simuladas_instr}
+        \begin{tabular}{c | c | c | c | c | c | c | c}
+            \hline
+            R ($\Omega$) & 100 & 108 & 119 & 127 & 131 & 134 & 138 \\
+            \hline
+            T ($^{\circ}C$) & 0 & 20 & 50 & 70 & 80 & 90 & 100 \\
+            \hline
+            $V_{T}$ (mV) & 9.99 & 10.78 & 11.86 & 12.68 & 13.08 & 13.38 & 13.78 \\
+            \hline
+            $V_{OUT}$ (V) & 3.61 & 3.89 & 4.28 & 4.58 & 4.72 & 4.83 & 4.97 \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
 
-\subsection{Simluación en LTSpice}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -537,45 +558,15 @@ El circuito de medición acondicionado completo se puede observar en la figura \
 % <OR> manually copy in the resultant .bbl file
 % set second argument of \begin to the number of references
 % (used to reserve space for the reference number labels box)
-\begin{thebibliography}{1}
-\bibitem{stat}
-Pakzad, S. N., \& Fenves, G. L. (2009). \emph{Statistical analysis of vibration modes of a suspension bridge using spatially dense wireless sensor network}. Journal of structural engineering, 135(7), 863-872.
-\bibitem{stat1}
-Pakzad, S. N., Fenves, G. L., Kim, S., \& Culler, D. E. (2008).  \emph{Design and implementation of scalable wireless sensor network for structural monitoring}. Journal of Infrastructure Systems, 14(1), 89-101.
-\bibitem{wave}
-Hou, Z., Noori, M., \& Amand, R. S. (2000). \emph{Wavelet-based approach for structural damage detection}. Journal of Engineering Mechanics, 126(7), 677-683.
-\bibitem{fft}
-Schwarz, B. J., \& Richardson, M. H. (1999). \emph{Experimental modal analysis}. CSI Reliability week, 35(1), 1-12.
-\bibitem{salgado}
-Estrada, R. S. (2008). \emph{Damage detection methods in bridges through vibration monitoring: evaluation and application}.
-\bibitem{fftw3}
-M.~Frigo and S.~G. Johnson, \emph{The Design and Implementation of FFTW3} Proceedings of the IEEE, vol. 93, no. 2, pp. 216–231, Feb. 2005.
-\bibitem{ANN}
-D.~Reby, S.~Lek, I.~Dimopoulos, J.~Joachim, J.~Lauga, and S.~Aulagnier, \emph{Artificial neural networks as a classification method in the behavioural sciences}, Behavioural Processes, vol. 40, no. 1, pp. 35–43, Apr. 1997
-\bibitem{BPP}
-Rumelhart, D. E., Hinton, G. E., \& Williams, R. J. (1985). \emph{Learning internal representations by error propagation} (No. ICS-8506). California Univ San Diego La Jolla Inst. for Cognitive  Science..
-\bibitem{Timer}
-Q.~Li, C.~Yao, \emph{Real-Time Concepts for Embedded Systems}, CRC Press, 2003.
-\bibitem{HM}
-Kim, S. et.al, (2007). \emph{Health Monitoring of Civil Infrastructures Using Wireless Sensor Networks}. Proceedings of the 6th International Conference on Information Processing in Sensor Networks (IPSN '07),Cambridge, ACM Press, 254-263.
- 
 
-\bibitem{CHEN}
-X.~Chen, Z.~Gao, \emph{ Data Processing Based on Wavelet Analysis in Structure Health Monitoring System}, Journal of computers, Vol. 6, No. 12, December 2011.
-
-\bibitem{Ovanesova}
-A.~ Ovanesova, L.~Suárez, \emph{Applications of wavelet transform to damage detection in frame structures}, Engineering Structures, Vol.26, No.1, pp.39-49, January 2004.
-
-\bibitem{Golmohamadi}
-M.~ Golmohamadi, H.~ Badri, \emph{ Damage Diagnosis in Bridges Using Wavelet.}, IACSIT Coimbatore Conferece, Vol. 28, 2012.
-
-\bibitem{Crespo}
-A.~ Crespo, \emph{ Real-Time Control of Non-uniformly Sampled Systems.}
-
-\bibitem{yocto}
-About Yocto Proyect. http://www.yoctoproject.org/about
-
-\end{thebibliography}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{thebibliography}{1}
+%\bibitem{stat}
+%Pakzad, S. N., \& Fenves, G. L. (2009). \emph{Statistical analysis of vibration modes of a suspension %bridge using spatially dense wireless sensor network}. Journal of structural engineering, 135(7), 863-872.
+%\bibitem{stat1}
+%Pakzad, S. N., Fenves, G. L., Kim, S., \& Culler, D. E. (2008).  \emph{Design and implementation of scalable wireless sensor network for structural monitoring}. Journal of Infrastructure Systems, 14(1), 89-101.
+%\end{thebibliography}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % biography section
 % 
@@ -621,5 +612,3 @@ About Yocto Proyect. http://www.yoctoproject.org/about
 
 % that's all folks
 \end{document}
-
-
