@@ -14,8 +14,8 @@ const char* password = "";
 const char * udpAddress = "192.168.0.35";//mac
 const int udpPort = 4444;
 
-const char* ssid     = "Fam SQ";
-const char* password = "1970alsoli";
+const char* ssid     = "";
+const char* password = "";
 */
 // Variables para la temperatura
 double temperaturas = 0;
