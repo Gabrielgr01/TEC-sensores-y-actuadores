@@ -7,8 +7,8 @@
 const char * udpAddress = "192.168.0.189";//mac
 const int udpPort = 4444;
 
-const char* ssid     = "TP-Link_74CB";
-const char* password = "42167127";
+const char* ssid     = "";
+const char* password = "";
 
 /*
 const char * udpAddress = "192.168.0.35";//mac
